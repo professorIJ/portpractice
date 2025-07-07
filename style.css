@@ -154,7 +154,7 @@ img {
     animation: fadeInDown 1s ease-out forwards;
 }
 
-/* --- CORRECTED FIX START: Header Logo and Brand Name Layout --- */
+/* Header Logo and Brand Name Layout */
 .logo {
     display: flex; /* Use flexbox to align logo and text horizontally */
     align-items: center; /* Vertically centers the logo and text */
@@ -163,7 +163,7 @@ img {
 
 /* Specific styling for the header logo image */
 .header-logo {
-    width: 45px; /* Adjust this size to match Testalica's logo proportion */
+    width: 45px; /* Adjusted size to match Testalica's logo proportion */
     height: 45px; /* Keep equal to width */
     object-fit: contain; /* Ensures the whole logo is visible within the bounds */
     border-radius: 5px; /* Retain slight rounding for the header logo */
@@ -175,7 +175,7 @@ img {
 }
 
 .brand-name {
-    font-size: 1.6em; /* Adjust to match the visual size in Testalica example */
+    font-size: 1.6em; /* Adjusted to match the visual size in Testalica example */
     font-weight: 700;
     font-family: 'Montserrat', sans-serif;
     /* Silver gradient text */
@@ -184,7 +184,6 @@ img {
     -webkit-text-fill-color: transparent;
     line-height: 1; /* Ensures text aligns well with logo */
 }
-/* --- CORRECTED FIX END: Header Logo and Brand Name Layout --- */
 
 
 .hero-content {
@@ -269,14 +268,14 @@ img {
     text-align: center;
 }
 
-/* --- REVERTED FIX START: About Me Logo (restored to original) --- */
-/* Specific styling for the about me logo image - REVERTED to original rectangular/square shape */
+/* --- FIX START: About Me Logo (making it round) --- */
+/* Specific styling for the about me logo image */
 .about-logo-brief img.about-logo {
-    width: 120px; /* Original width */
-    height: 120px; /* Original height */
-    border-radius: 0; /* REMOVED circular shape, back to square/rectangular if image itself isn't square */
-    object-fit: contain; /* Use contain to ensure the whole image is seen */
-    border: 3px solid var(--highlight-color);
+    width: 100px; /* Set a size that works well for a circle */
+    height: 100px; /* Must be equal to width for a perfect circle */
+    border-radius: 50%; /* Makes the image circular */
+    object-fit: cover; /* Crops the image to fit the circle while maintaining aspect ratio */
+    border: 3px solid var(--highlight-color); /* Existing border */
     box-shadow: 0 0 15px rgba(152, 183, 233, 0.5);
     transition: transform 0.4s ease;
 }
@@ -284,7 +283,7 @@ img {
 .about-logo-brief img.about-logo:hover {
     transform: scale(1.05) rotate(7deg);
 }
-/* --- REVERTED FIX END: About Me Logo --- */
+/* --- FIX END: About Me Logo --- */
 
 .about-brief {
     font-size: 1.1em;
@@ -566,12 +565,12 @@ footer {
     .about-logo-brief {
         flex-direction: column;
     }
-    /* About logo size for smaller screens - REVERTED to original */
+    /* About logo size for smaller screens - making it round */
     .about-logo-brief img.about-logo {
-        width: 120px; /* Reverted to original size */
-        height: 120px; /* Reverted to original size */
-        border-radius: 0; /* Ensure it's not circular on mobile either */
-        object-fit: contain;
+        width: 80px; /* Slightly smaller on mobile */
+        height: 80px; /* Needs to be equal for a perfect circle */
+        border-radius: 50%; /* Make it round on mobile too */
+        object-fit: cover; /* Ensures image covers the circular area */
     }
     .about-brief {
         font-size: 1em;
@@ -619,4 +618,4 @@ footer {
     .contact-section p {
         font-size: 1em;
     }
-}
+    }
