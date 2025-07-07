@@ -156,20 +156,23 @@ img {
 
 .logo {
     display: flex;
-    align-items: center;
+    align-items: center; /* Ensures logo and text are vertically aligned */
     gap: 10px;
 }
 
-.logo-img {
-    height: 40px;
-    width: auto;
-    border-radius: 50%;
+/* Specific styling for the header logo image */
+.header-logo {
+    width: 50px; /* Adjusted size to be smaller, similar to Testalica Creations */
+    height: 50px; /* Keep equal to width for proportional scaling */
+    object-fit: contain; /* Ensures the whole logo is visible */
     transition: transform 0.3s ease;
+    border-radius: 5px; /* Slightly rounded corners if desired, or 0 for sharp */
 }
 
-.logo-img:hover {
-    transform: scale(1.05) rotate(5deg);
+.header-logo:hover {
+    transform: scale(1.05); /* Gentle hover animation */
 }
+
 
 .brand-name {
     font-size: 1.8em;
@@ -263,16 +266,18 @@ img {
     text-align: center;
 }
 
-.about-logo {
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
-    border: 3px solid var(--highlight-color);
+/* Specific styling for the about me logo image */
+.about-logo-brief img.about-logo { /* Targeting with more specificity */
+    width: 100px; /* Adjusted size for the circular logo */
+    height: 100px; /* Keep equal to width for a perfect circle */
+    border-radius: 50%; /* Makes the image circular */
+    object-fit: cover; /* Crops the image to fit the circle while maintaining aspect ratio */
+    border: 3px solid var(--highlight-color); /* Existing border, looks good */
     box-shadow: 0 0 15px rgba(152, 183, 233, 0.5);
     transition: transform 0.4s ease;
 }
 
-.about-logo:hover {
+.about-logo-brief img.about-logo:hover {
     transform: scale(1.05) rotate(7deg);
 }
 
@@ -515,6 +520,12 @@ footer {
         align-self: center;
     }
 
+    /* Adjust header logo size for smaller screens */
+    .header-logo {
+        width: 40px; /* Slightly smaller on mobile */
+        height: 40px;
+    }
+
     .hero-content .tagline-title {
         font-size: 2.5em;
     }
@@ -545,6 +556,11 @@ footer {
     }
     .about-logo-brief {
         flex-direction: column;
+    }
+    /* Adjust about logo size for smaller screens */
+    .about-logo-brief img.about-logo {
+        width: 80px; /* Slightly smaller on mobile */
+        height: 80px;
     }
     .about-brief {
         font-size: 1em;
