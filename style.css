@@ -154,35 +154,38 @@ img {
     animation: fadeInDown 1s ease-out forwards;
 }
 
+/* --- FIX START: Header Logo and Brand Name Layout --- */
 .logo {
-    display: flex;
-    align-items: center; /* Ensures logo and text are vertically aligned */
-    gap: 10px;
+    display: flex; /* Use flexbox to align logo and text horizontally */
+    align-items: center; /* Vertically centers the logo and text */
+    gap: 8px; /* Space between the logo and the brand name */
 }
 
 /* Specific styling for the header logo image */
 .header-logo {
-    width: 50px; /* Adjusted size to be smaller, similar to Testalica Creations */
-    height: 50px; /* Keep equal to width for proportional scaling */
-    object-fit: contain; /* Ensures the whole logo is visible */
+    width: 45px; /* Slightly adjusted size to match Testalica's logo proportion */
+    height: 45px; /* Keep equal to width */
+    object-fit: contain; /* Ensures the whole logo is visible within the bounds */
+    border-radius: 5px; /* Retain slight rounding as before */
     transition: transform 0.3s ease;
-    border-radius: 5px; /* Slightly rounded corners if desired, or 0 for sharp */
 }
 
 .header-logo:hover {
     transform: scale(1.05); /* Gentle hover animation */
 }
 
-
 .brand-name {
-    font-size: 1.8em;
+    font-size: 1.6em; /* Slightly adjusted to match the visual size in Testalica example */
     font-weight: 700;
     font-family: 'Montserrat', sans-serif;
     /* Silver gradient text */
     background: linear-gradient(45deg, var(--logo-gradient-start), var(--logo-gradient-end));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    line-height: 1; /* Ensures text aligns well with logo */
 }
+/* --- FIX END: Header Logo and Brand Name Layout --- */
+
 
 .hero-content {
     max-width: 900px;
@@ -506,7 +509,17 @@ footer {
     }
 
     .logo {
-        margin-bottom: 15px;
+        margin-bottom: 15px; /* Add some space if navbar stacks */
+        gap: 6px; /* Slightly less gap on mobile */
+    }
+
+    /* Adjust header logo size for smaller screens */
+    .header-logo {
+        width: 35px; /* Slightly smaller on mobile */
+        height: 35px;
+    }
+    .brand-name {
+        font-size: 1.4em; /* Adjust font size on mobile */
     }
 
     .nav-links {
@@ -518,12 +531,6 @@ footer {
         margin-top: 10px;
         width: fit-content;
         align-self: center;
-    }
-
-    /* Adjust header logo size for smaller screens */
-    .header-logo {
-        width: 40px; /* Slightly smaller on mobile */
-        height: 40px;
     }
 
     .hero-content .tagline-title {
@@ -593,7 +600,7 @@ footer {
     }
 
     .logo h1 {
-        font-size: 1.5em;
+        font-size: 1.3em; /* Even smaller font on very small screens */
     }
 
     .btn {
@@ -608,4 +615,4 @@ footer {
     .contact-section p {
         font-size: 1em;
     }
-}
+        }
